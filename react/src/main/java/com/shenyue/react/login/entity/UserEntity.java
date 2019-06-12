@@ -11,7 +11,7 @@ import lombok.Data;
  **/
 @Data
 public class UserEntity {
-    private Integer id;
+    private String id;
     /**用户名*/
     private String loginName;
     /**登陆密码*/
@@ -22,7 +22,6 @@ public class UserEntity {
     private String sex;
     /**年龄*/
     private Integer age;
-    /**角色id*/
-    private String roleId;
+
 
 }

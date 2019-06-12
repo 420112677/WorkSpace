@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class RoleAndUserEntity {
     /**关系表的id*/
-    private Integer id;
+    private String id;
     /**角色表Id*/
     private String roleId;
     /**用户表Id*/

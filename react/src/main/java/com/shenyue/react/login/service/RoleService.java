@@ -1,8 +1,6 @@
 package com.shenyue.react.login.service;
 
-import com.shenyue.react.login.dao.RoleDao;
 import com.shenyue.react.login.entity.RoleEntity;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -14,10 +12,10 @@ import java.util.List;
  **/
 
 public interface RoleService {
-    void update(RoleEntity roleEntity);
-    void add(RoleEntity roleEntity);
-    void delete(int id);
-    RoleEntity selectById(int id);
+    String update(RoleEntity roleEntity);
+    String add(RoleEntity roleEntity);
+    String delete(String id);
+    RoleEntity selectById(String id);
     List<RoleEntity> selectAll();
     List<RoleEntity> selectByRoleName(String name);
 }

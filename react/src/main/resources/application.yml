@@ -1,12 +1,13 @@
 server:
   port: 8080
 
+
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/react?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    name: test
+    url: jdbc:mysql://127.0.0.1:3306/react?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
 mybatis:
-  mapper-locations: classpath:mapping/*.xml
-#  type-aliases-package: com.shenyue.react.login.entity
+  mapper-locations: classpath*:mapper/*.xml

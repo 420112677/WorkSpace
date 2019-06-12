@@ -16,25 +16,50 @@ import java.util.List;
  **/
 @Service("roleService")
 public class RoleServiceImp implements RoleService {
+
     @Autowired
     private RoleDao roleDao;
     @Override
-    public void update(RoleEntity roleEntity) {
-        roleDao.update(roleEntity);
+    public String update(RoleEntity roleEntity) {
+        Integer row;
+        try {
+            row=roleDao.update(roleEntity);
+        }catch (Exception e){
+            e.printStackTrace();
+            return "更新失败";
+        }
+        if (row>0){
+            return "更新成功";
+        }else {
+            return "未找到该id";
+        }
+
     }
 
     @Override
-    public void add(RoleEntity roleEntity) {
-        roleDao.insert(roleEntity);
+    public String add(RoleEntity roleEntity) {
+
+        try {
+            roleDao.insert(roleEntity);
+        }catch (Exception e){
+            e.printStackTrace();
+            return "添加失败";
+        }
+        return "添加成功";
     }
 
     @Override
-    public void delete(int id) {
-     roleDao.delete(id);
+    public String delete(String id) {
+       Integer row= roleDao.delete(id);
+       if (row>0) {
+           return "删除成功";
+       }else {
+           return "未找到此id";
+       }
     }
 
     @Override
-    public RoleEntity selectById(int id) {
+    public RoleEntity selectById(String id) {
         return roleDao.selectById(id);
     }
 

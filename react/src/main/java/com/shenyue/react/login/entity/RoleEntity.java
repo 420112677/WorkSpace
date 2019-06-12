@@ -12,7 +12,7 @@ import lombok.Data;
 @Data
 public class RoleEntity {
     /**唯一id*/
-    private Integer id;
+    private String id;
     /**角色名称*/
     private String roleName;
 }
